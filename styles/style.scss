@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+:root {
+    --primary-color: red;
+    --btn-bg-color: rgb(254,24,0);
+    --header-height: 3rem;
+    --section-title-pb: 2rem;
+    --container-padding: 1rem;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #000;
+    color: #ababab;
+    font-size: .72rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+    color: #dfdfdf;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    max-width: 1024px;
+    padding-right: var(--container-padding);
+    padding-left: var(--container-padding);
+}
+.red-clr {
+    color: #f00;
+}
+//--------------------------- HEADER NAV ---------------------------
+.header.background {
+    background-color: inherit;
+}
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.nav__logo {
+    font-size: 1.27rem;
+    font-weight: 600;
+}
+.nav__menu {
+    display: none;
+}
+.nav__menu-icon-container {
+    width: 1.8rem;
+    height: 2rem;
+    outline: 1px solid #fff;
+}
