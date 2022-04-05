@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+  />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <title>Document</title>
@@ -11,45 +15,356 @@
 <body>
     <!------------------------- HEADER ------------------------->
     <header class="header">
-        <nav class="nav container">
+        <nav class="container nav">
             <a href="index.html" class="nav__logo">
                 <span class="red-clr">BE</span>FIT
-            </a>
-            <div class="nav__menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#" class="nav__link">
-                            home
-                        </a>
-                        <a href="#" class="nav__link">
-                            about
-                        </a>
-                        <a href="#" class="nav__link">
-                            features
-                        </a>
-                        <a href="#" class="nav__link">
-                            pricing
-                        </a>
-                        <a href="#" class="nav__link">
-                            trainers
-                        </a>
-                        <a href="#" class="nav__link">
-                            blogs
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            </a>            
             <div class="nav__menu-icon-container">
                 <input type="checkbox" class="nav-input" id="nav-input">
                 <label for="nav-input" class="nav-label">
                     <span class="nav__menu-icon"></span>
                 </label>
             </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">
+                            home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            about
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#features" class="nav__link">
+                            features
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#pricing" class="nav__link">
+                            pricing
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#trainers" class="nav__link">
+                            trainers
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#blogs" class="nav__link">
+                            blogs
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
+    <main class="main">
+        <!------------------------ HOME ------------------------>
+        <section class="home" id="home">
+            <div class="home__container">
+                <div class="container">
+                    <div class="home__content">
+                        <h2 class="sub-title home__sub-title">
+                            BE STRONG, BE FIT
+                        </h2>
+                        <h1 class="home__title">
+                            make yourself stronger than your excuses
+                        </h1>
+                        <a href="#" class="btn home__link">
+                            get started
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper homeSwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                      </div>
+                      <div class="swiper-slide">
+                      </div>
+                      <div class="swiper-slide">
+                      </div>
+                    </div>
+                    <div class="swiper-pagination">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---------------------- ABOUT US ---------------------->
+        <section class="section about" id="about">
+            <div class="container about__container">
+                <div class="about__top">
+                    <div class="about__img-container">
+                        <img src="images/about-img.jpg" alt="" class="about__img">
+                    </div>
+                </div>
+                <div class="about__content">
+                    <div class="section__title-container">
+                        <h3 class="sub-title about__sub-title">
+                            about us
+                        </h3>
+                        <h2 class="section-title about__title">
+                            every day is a chance to become better
+                        </h2>
+                    </div>
+                    <p class="description about__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum esse quasi necessitatibus, porro sint quaerat nemo hic commodi cupiditate ut labore tempore sunt enim aspernatur mollitia eum alias dolores sit omnis asperiores! Commodi, minus.
+                    </p>
+                    <div class="about__benefits">
+                        <div class="about__benefit">
+                            <div class="about__benefit-title-container">
+                                <span class="material-icons-sharp">
+                                    done
+                                </span>
+                                <h4 class="about__benefit-title">
+                                    body and mind
+                                </h4>       
+                            </div>
+                            <p class="description about__benefit-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, facere.</p>
+                        </div>
+                        <div class="about__benefit">
+                            <div class="about__benefit-title-container">
+                                <span class="material-icons-sharp">
+                                    done
+                                </span>
+                                <h4 class="about__benefit-title">
+                                    body and mind
+                                </h4>       
+                            </div>
+                            <p class="description about__benefit-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, facere.</p>
+                        </div>
+                        <div class="about__benefit">
+                            <div class="about__benefit-title-container">
+                                <span class="material-icons-sharp">
+                                    done
+                                </span>
+                                <h4 class="about__benefit-title">
+                                    body and mind
+                                </h4>       
+                            </div>
+                            <p class="description about__benefit-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, facere.</p>
+                        </div>
+                        <div class="about__benefit">
+                            <div class="about__benefit-title-container">
+                                <span class="material-icons-sharp">
+                                    done
+                                </span>
+                                <h4 class="about__benefit-title">
+                                    body and mind
+                                </h4>       
+                            </div>
+                            <p class="description about__benefit-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, facere.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn about__btn">
+                        read more
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-------------------- GYM FEATURES -------------------->
+        <section class="section gym__features" id="features">
+            <div class="container gym__features-container">
+                <div class="section__title-container-1">
+                    <div class="stsc1">
+                        <h2 class="section__title-1">
+                            gym features
+                        </h2>
+                    </div>
+                </div>
+                <div class="gym__features-content">
+                    <article class="gym__features-card">
+                        <div class="gym__features-img-container">
+                            <img src="images/f-img-1.jpg" alt="" class="gym__features-img">
+                        </div>
+                        <div class="gym__features-data">
+                            <img src="images/icon-1.png" alt="" class="gym__features-icon">
+                            <h3 class="gym__features-data-title">
+                                Bodybuilding
+                            </h3>
+                            <p class="description gym__features-description">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, laboriosam illum.
+                            </p>
+                            <a href="#" class="btn gym__features-btn">
+                                read more
+                            </a>
+                        </div>
+                    </article>
+                    <article class="gym__features-card">
+                        <div class="gym__features-img-container">
+                            <img src="images/f-img-2.jpg" alt="" class="gym__features-img">
+                        </div>
+                        <div class="gym__features-data">
+                            <img src="images/icon-2.png" alt="" class="gym__features-icon">
+                            <h3 class="gym__features-data-title">
+                                Bodybuilding
+                            </h3>
+                            <p class="description gym__features-description">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, laboriosam illum.
+                            </p>
+                            <a href="#" class="btn gym__features-btn">
+                                read more
+                            </a>
+                        </div>
+                    </article>
+                    <article class="gym__features-card">
+                        <div class="gym__features-img-container">
+                            <img src="images/f-img-3.jpg" alt="" class="gym__features-img">
+                        </div>
+                        <div class="gym__features-data">
+                            <img src="images/icon-3.png" alt="" class="gym__features-icon">
+                            <h3 class="gym__features-data-title">
+                                Bodybuilding
+                            </h3>
+                            <p class="description gym__features-description">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, laboriosam illum.
+                            </p>
+                            <a href="#" class="btn gym__features-btn">
+                                read more
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section pricing" id="pricing">
+            <div class="container pricing__container">
+                <article class="pricing__card">
+                    <div class="section__title-container">
+                        <h3 class="sub-title about__sub-title">
+                            pricing plan
+                        </h3>
+                        <h2 class="section-title about__title">
+                            affordable pricing plan for your
+                        </h2>
+                    </div>
+                    <p class=" description pricing__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis iure facilis reiciendis tempora autem, amet aut perspiciatis officia neque numquam.
+                    </p>
+                    <ul class="pricing__list">
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Cardio exercise
+                        </li>
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Weightlifting
+                        </li>
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Diet plans
+                        </li>
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Overall results
+                        </li>
+                    </ul>
+                    <a href="#" class="btn pricing__btn">
+                        all pricing
+                    </a>
+                </article>
+                <article class="pricing__card">
+                    <h3 class="pricing__card-title">
+                        basic plan
+                    </h3>
+                    <p class="pricing__bill">
+                        $ <span class="red-clr">30</span> / M
+                    </p>
+                    <ul class="pricing__list">
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Personal training
+                        </li>
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Cardio exercise
+                        </li>
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Weightlifting
+                        </li>
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Diet plans
+                        </li>
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Overall results
+                        </li>
+                    </ul>
+                    <a href="#" class="btn pricing__btn">
+                        get started
+                    </a>
+                </article>
+                <article class="pricing__card">
+                    <h3 class="pricing__card-title">
+                        basic plan
+                    </h3>
+                    <p class="pricing__bill">
+                        $ <span class="red-clr">90</span> / M
+                    </p>
+                    <ul class="pricing__list">
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Personal training
+                        </li>
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Cardio exercise
+                        </li>
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Weightlifting
+                        </li>
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Diet plans
+                        </li>
+                        <li class="pricing__item">
+                            <span class="material-icons-sharp">
+                                done
+                            </span>
+                            Overall results
+                        </li>
+                    </ul>
+                    <a href="#" class="btn pricing__btn">
+                        get started
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
 
 
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="scripts/script.js"></script>
 </body>
 </html>
