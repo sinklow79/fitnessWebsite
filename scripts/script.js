@@ -41,3 +41,26 @@ let homeSwiper = new Swiper (".homeSwiper", {
         clickable: true,
     },
 })
+
+// -----------------------HOME SWIPER-----------------------
+
+let testimonialsSwiper = new Swiper (".testimonialsSwiper", {
+    slidesPerView: 1,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    spaceBetween: 3,
+    breakpoints: {
+        
+    }
+})
+
+// --------------------------BLOGS SWIPER--------------------------
+
+let blogsSwiper = new Swiper (".blogsSwiper", {
+    spaceBetween: 20,
+    pagination: {
+        el: ".swiper-pagination",
+    },
+})

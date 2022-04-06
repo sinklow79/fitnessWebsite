@@ -48,6 +48,11 @@ button,
 input {
     border: none;
     outline: none;
+    font-family: inherit;
+    color: inherit;
+}
+button {
+    cursor: pointer;
 }
 .container {
     max-width: 1024px;
@@ -222,7 +227,7 @@ input {
 }
 .home__title {
     text-transform: capitalize;
-    font-size: calc(1.7rem + 1vw);
+    font-size: calc(2rem + 1vw);
     margin-bottom: 1rem;
 }
 .homeSwiper {
@@ -246,13 +251,13 @@ input {
         background: linear-gradient(90deg,rgba(0,0,0,0),rgba(0,0,0,.3)),
         url("../images/home-bg-3.jpg") no-repeat center/cover;
     }
-    .swiper-pagination-bullet{
-        width: 13px;
-        height: 13px;
-        border-radius: 2px;
-        background-color: #fff;
-        margin: 0 7px !important;
-    }
+}
+.swiper-pagination-bullet{
+    width: 13px;
+    height: 13px;
+    border-radius: 2px;
+    background-color: #fff;
+    margin: 0 7px !important;
 }
 // ----------------------------ABOUT----------------------------
 .about__container,
@@ -297,7 +302,7 @@ input {
 }
 .section-title {
     text-transform: capitalize;
-    font-size: calc(1.4rem + 1vw);
+    font-size: calc(1.7rem + 1vw);
 }
 .about__benefits {
     display: grid;
@@ -309,15 +314,15 @@ input {
     align-items: center;
     column-gap: .4rem;
     margin-bottom: .7rem;
-    .material-icons-sharp {
-        font-size: 1.15rem;
-        font-weight: 600;
-        color: var(--primary-color);
-    }
     .about__benefit-title {
         text-transform: capitalize;
         font-size: .85rem;
     }
+}
+.arrow {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-color);
 }
 // -------------------------GYM FEATURES-------------------------
 .section__title-container-1 {
@@ -370,7 +375,7 @@ input {
 .gym__features-data {
     text-align: center;
     padding: 1.5rem 1rem;
-    background-color: rgb(17,18,13);
+    background-color: rgb(22,22,25);
 }
 .gym__features-icon {
     filter: invert(1);
@@ -390,13 +395,286 @@ input {
 .pricing__description {
     margin-bottom: 1rem;
 }
+.pricing__container {
+    display: grid;
+    row-gap: 1rem;
+}
 .pricing__list {
     display: flex;
     flex-direction: column;
-    row-gap: .5rem;
+    row-gap: 1rem;
 }
 .pricing__item {
     display: flex;
     align-items: center;
     column-gap: .3rem;
+}
+.pricing__btn {
+    margin-top: 1.5rem;
+}
+.pricing__card:nth-of-type(2),
+.pricing__card:nth-of-type(3) {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    .pricing__list {
+        align-items: center;
+    }
+}
+.pricing__card:nth-of-type(2) {
+    background-color: rgb(22,22,25);
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-bottom: 50px solid var(--background-color);
+        border-left: 50px solid transparent;
+        width: 0;
+    }
+}
+.pricing__card-title {
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    margin-bottom: .5rem;
+}
+.pricing__bill {
+    font-size: 1.2rem;
+    color: var(--color-white);
+    font-weight: 600;
+    margin-bottom: 1.6rem;
+    span {
+        font-size: 1.9rem;
+    }
+}
+// ---------------------------TRAINERS---------------------------
+.trainers__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+}
+.trainers__content {
+    position: relative;
+    overflow-y: hidden;
+    &:hover .trainers__data {
+        transform: translateY(0);
+    }
+    &:hover .trainers__social-media {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+.trainers__img-container {
+    width: 100%;
+    height: calc(250px + 10vh);
+}
+.trainers__data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem var(--container-padding) 0;
+    transform: translateY(3.7rem);
+    background-color: rgb(22,22,25);
+    transition: .3s ease;
+}
+.trainer__status {
+    font-size: .72rem;
+}
+.trainer__name {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+.trainers__social-media {
+    display: flex;
+    align-items: center;
+    column-gap: 1.3rem;
+    margin-top: .7rem;
+    height: 3.5rem;
+    border-top: 2px solid rgb(150,150,160);
+    opacity: 0;
+    pointer-events: none;
+}
+.trainers__content-link {
+    font-size: 1.15rem;
+}
+.trainers__content-link:hover {
+    color: var(--btn-bg-color);
+}
+// ---------------------------DISCOUNT---------------------------
+.discount {
+    height: 45vh;
+    background: linear-gradient(90deg, transparent,rgba(0,0,0,.3)), 
+                url("../images/banner-bg.jpg") no-repeat center/cover;
+}
+.discount__container {
+    text-align: center;
+    .section__title-container {
+        margin-bottom: .3rem;
+    }
+    .section-title {
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+.discount__p {
+    margin-bottom: 1rem;
+}
+// -------------------------TESTIMONIALS-------------------------
+.testimonials__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+    .section__title-container {
+        margin-bottom: .4rem;
+    }
+}
+.testimonials__p {
+    margin-bottom: 1rem;
+}
+.testimonialsSwiper {
+    width: 100%;
+    max-width: 320px;
+    padding-bottom: 2rem;
+    .swiper-slide {
+        background-color: rgb(22,22,25);
+        padding: 1.05rem 1.55rem .3rem;
+        clip-path: polygon(
+            0% 0px,
+            100% 0%,
+            100% calc(100% - 20px),
+            calc(100% - 20px) 100%,
+            0px 100%,
+            0px 0
+        );
+    }
+    .swiper-pagination {
+        bottom: 0;
+    }
+    .swiper-pagination-bullet{
+        width: 4px;
+        height: 4px;
+        border-radius: 1px;
+        margin: 0 3px !important;
+    }
+}
+.testimonials__swiper-slide-bottom {
+    display: flex;
+    align-items: center;
+}
+.testimonials__swiper-slide-p {
+    margin-bottom: .3rem;
+}
+.testimonials__img {
+    display: block;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: .7rem;
+}
+.testimonials__name {
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+.testimonials__status {
+    font-size: .67rem;
+}
+.testimonials-quote {
+    font-size: 4.75rem;
+    margin-left: auto;
+    transform: rotate(180deg);
+}
+// ---------------------------------BLOGS---------------------------------
+.blog__article {
+    background-color: rgb(22,22,25);
+}
+.blog__img-container {
+    height: 28vh;
+    overflow-y: hidden;
+}
+.blog__img {
+    display: block;
+}
+.blog__article-bottom {
+    padding: 1rem;
+}
+.blog__date-data {
+    display: flex;
+    column-gap: .5rem;
+    font-size: .68rem;
+    margin-bottom: .7rem;
+}
+.blog__title {
+    font-size: 1.15rem;
+    margin-bottom: .5rem;
+}
+.blog__p {
+    margin-bottom: 1rem;
+}
+.blogsSwiper {
+    padding-bottom: 3rem;
+    .swiper-pagination-bullet{
+        width: 4px;
+        height: 4px;
+        border-radius: 1px;
+        margin: 0 3px !important;
+    }
+}
+// --------------------------------FOOTER--------------------------------
+.footer {
+    padding: 3rem 0 1rem;
+}
+.footer__container {
+    display: grid;
+    row-gap: 1.5rem;
+}
+.footer__content {
+    text-align: center;
+}
+.footer__title {
+    text-transform: capitalize;
+    font-size: .8rem;
+    margin-bottom: .5rem;
+}
+.footer__item {
+    text-transform: capitalize;
+    font-size: .75rem;
+}
+.footer__list {
+    display: grid;
+    row-gap: .5rem;
+}
+.footer__content:nth-of-type(2) span {
+    display: inline-block;
+    margin-left: .28rem;
+}
+.footer__content:nth-of-type(3) .footer__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .35rem;
+}
+.footer__content:nth-of-type(3) .footer__item span {
+    font-size: 1rem;
+}
+.footer__socials {
+    margin-top: .8rem;
+    display: flex;
+    column-gap: 1.5rem;
+    justify-content: center;
+}
+.footer__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: .6rem;
+    align-items: center;
+}
+.footer__input {
+    width: 90%;
+    margin: 0 auto;
+    padding: .5rem .8rem;
+    background-color: rgb(22,22,25);
+    border-radius: 2%;
+    color: #ddd;
+}
+.footer__newsletter-btn {
+    margin-top: .8rem;
 }
