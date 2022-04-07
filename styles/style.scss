@@ -55,7 +55,7 @@ button {
     cursor: pointer;
 }
 .container {
-    max-width: 1024px;
+    max-width: 1200px;
     padding-right: var(--container-padding);
     padding-left: var(--container-padding);
     margin-left: auto;
@@ -71,12 +71,14 @@ button {
     padding: .6rem 1.5rem;
     font-size: .8rem;
     font-weight: 500;
-    background: linear-gradient(130deg, var(--btn-bg-color) 93%, transparent 90%);
     width: fit-content;
     transition: .25s ease;
+    clip-path: polygon(0% 0px, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0px 100%, 0px 0);
 }
 .btn:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
+    background-color: #fff;
+    color: red;
 }
 .sub-title {
     text-transform: uppercase;
@@ -131,57 +133,96 @@ button {
     font-weight: 600;
     z-index: inherit;
 }
+// NAV MENU ICON
 .nav__menu-icon-container {
-    width: 1.4rem;
-    height: .9rem;
-    transition: all .22s ease;
-    z-index: inherit;
-}
-.nav-input {
-    display: none;
-}
-.nav-label {
     position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
     cursor: pointer;
+    width: 22px;
+    height: 14px;
+    transform-origin: center center;
+    z-index: inherit;
+    user-select: none;
 }
-.nav-label::before,
-.nav-label::after {
-    content: "";
-}
-.nav-label::before,
-.nav-label::after,
 .nav__menu-icon {
     position: absolute;
     display: block;
     width: 100%;
-    height: .12rem;
+    height: 2px;
     background-color: var(--color-white);
-    transition: .22s ease;
 }
-.nav-label::before {
+.nav__menu-icon:nth-of-type(1) {
     top: 0;
 }
-.nav__menu-icon {
+.nav__menu-icon:nth-of-type(2) {
     top: 50%;
     transform: translateY(-50%);
+    transition: .1s;
 }
-.nav-label::after {
+.nav__menu-icon:nth-of-type(3) {
     bottom: 0;
 }
-.nav-input:checked ~ .nav-label::before {
-    top: 50%;
-    transform: translateY(-50%) rotate(-135deg);
-}
-.nav-input:checked ~ .nav-label::after {
-    top: 50%;
-    transform: translateY(-50%) rotate(135deg);
-}
-.nav-input:checked ~ .nav-label .nav__menu-icon {
-    transform: translateX(40%);
+.nav__menu-icon-container.animation .nav__menu-icon:nth-of-type(2) {
     opacity: 0;
+}
+.nav__menu-icon-container.animation .nav__menu-icon:nth-of-type(1) {
+    animation: mspan1 .3s forwards;
+}
+.nav__menu-icon-container.animation .nav__menu-icon:nth-of-type(3) {
+    animation: mspan3 .3s forwards;
+}
+.nav__menu-icon-container.animation1 .nav__menu-icon:nth-of-type(1) {
+    animation: mspan1-1 .3s forwards;
+}
+.nav__menu-icon-container.animation1 .nav__menu-icon:nth-of-type(3) {
+    animation: mspan3-1 .3s forwards;
+}
+@keyframes mspan1 {
+    50% {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    100% {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+}
+@keyframes mspan3 {
+    50% {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    100% {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+}
+@keyframes mspan1-1 {
+    0% {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+    50% {
+        top: 50%;
+        transform: translateY(-50%) rotate(0);
+    }
+    100% {
+        top: 0;
+        transform: translateY(0) rotate(0);
+    }
+}
+@keyframes mspan3-1 {
+    0% {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+    50% {
+        top: 50%;
+        transform: translateY(-50%) rotate(0);
+    }
+    100% {
+        bottom: 0;
+        transform: translateY(0) rotate(0);
+    }
 }
 .nav__menu {
     position: fixed;
@@ -194,7 +235,7 @@ button {
     overflow: hidden;
     z-index: 99;
 }
-.nav__menu.animation {
+.nav__menu.nm-animation {
     height: 368px;
 }
 .nav__list {
@@ -213,7 +254,7 @@ button {
 //---------------------------- HOME ----------------------------
 .home__container {
     position: relative;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     .container {
@@ -224,6 +265,12 @@ button {
     position: relative;
     max-width: 500px;
     z-index: 3;
+    pointer-events: none;
+    user-select: none;
+}
+.home__content > * {
+    pointer-events: none;
+    user-select: none;
 }
 .home__title {
     text-transform: capitalize;
@@ -251,13 +298,20 @@ button {
         background: linear-gradient(90deg,rgba(0,0,0,0),rgba(0,0,0,.3)),
         url("../images/home-bg-3.jpg") no-repeat center/cover;
     }
+    .swiper-pagination-bullet{
+        width: 13px;
+        height: 13px;
+        border-radius: 2px;
+        background-color: #fff;
+        margin: 0 7px !important;
+    }
 }
 .swiper-pagination-bullet{
-    width: 13px;
-    height: 13px;
-    border-radius: 2px;
     background-color: #fff;
-    margin: 0 7px !important;
+}
+.home__link {
+    pointer-events: auto;
+    user-select: initial;
 }
 // ----------------------------ABOUT----------------------------
 .about__container,
@@ -357,6 +411,8 @@ button {
 .gym__features-card {
     display: flex;
     flex-direction: column;
+    max-width: 390px;
+    margin-inline: auto;
     &:hover .gym__features-img {
         transform: scale(1.08);
     }
@@ -399,6 +455,14 @@ button {
     display: grid;
     row-gap: 1rem;
 }
+.pricing__card-container {
+    margin-inline: auto;
+    max-width: 400px;
+    width: 100%;
+}
+.pricing__card {
+    clip-path: polygon(0% 0px, 100% 0%, 100% calc(100% - 50px), calc(100% - 50px) 100%, 0px 100%, 0px 0);
+}
 .pricing__list {
     display: flex;
     flex-direction: column;
@@ -412,25 +476,18 @@ button {
 .pricing__btn {
     margin-top: 1.5rem;
 }
-.pricing__card:nth-of-type(2),
-.pricing__card:nth-of-type(3) {
+.pricing__card-container:nth-of-type(2) .pricing__card,
+.pricing__card-container:nth-of-type(3) .pricing__card {
     text-align: center;
     padding: 2rem 1rem 1rem;
+    background-color: rgb(22,22,25);
+    transition: .3s ease;
     .pricing__list {
         align-items: center;
     }
-}
-.pricing__card:nth-of-type(2) {
-    background-color: rgb(22,22,25);
-    position: relative;
-    &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        border-bottom: 50px solid var(--background-color);
-        border-left: 50px solid transparent;
-        width: 0;
+    &:hover {
+        transform: scale(1.02);
+        background-color: rgb(30,30,40);
     }
 }
 .pricing__card-title {
@@ -456,6 +513,9 @@ button {
 .trainers__content {
     position: relative;
     overflow-y: hidden;
+    max-width: 444px;
+    max-height: 360px;
+    margin-inline: auto;
     &:hover .trainers__data {
         transform: translateY(0);
     }
@@ -463,10 +523,6 @@ button {
         opacity: 1;
         pointer-events: auto;
     }
-}
-.trainers__img-container {
-    width: 100%;
-    height: calc(250px + 10vh);
 }
 .trainers__data {
     position: absolute;
@@ -503,8 +559,11 @@ button {
 // ---------------------------DISCOUNT---------------------------
 .discount {
     height: 45vh;
-    background: linear-gradient(90deg, transparent,rgba(0,0,0,.3)), 
+    background: linear-gradient(90deg, transparent,rgba(0,0,0,.5)), 
                 url("../images/banner-bg.jpg") no-repeat center/cover;
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
 }
 .discount__container {
     text-align: center;
@@ -523,7 +582,7 @@ button {
 .testimonials__container {
     display: flex;
     flex-direction: column;
-    row-gap: 1.2rem;
+    row-gap: 2.5rem;
     .section__title-container {
         margin-bottom: .4rem;
     }
@@ -533,7 +592,7 @@ button {
 }
 .testimonialsSwiper {
     width: 100%;
-    max-width: 320px;
+    max-width: 360px;
     padding-bottom: 2rem;
     .swiper-slide {
         background-color: rgb(22,22,25);
@@ -624,7 +683,7 @@ button {
 }
 .footer__container {
     display: grid;
-    row-gap: 1.5rem;
+    row-gap: 2rem;
 }
 .footer__content {
     text-align: center;
@@ -632,7 +691,7 @@ button {
 .footer__title {
     text-transform: capitalize;
     font-size: .8rem;
-    margin-bottom: .5rem;
+    margin-bottom: 1.1rem;
 }
 .footer__item {
     text-transform: capitalize;
@@ -640,7 +699,7 @@ button {
 }
 .footer__list {
     display: grid;
-    row-gap: .5rem;
+    row-gap: 1rem;
 }
 .footer__content:nth-of-type(2) span {
     display: inline-block;
@@ -656,7 +715,7 @@ button {
     font-size: 1rem;
 }
 .footer__socials {
-    margin-top: .8rem;
+    margin-top: 1rem;
     display: flex;
     column-gap: 1.5rem;
     justify-content: center;
@@ -677,4 +736,252 @@ button {
 }
 .footer__newsletter-btn {
     margin-top: .8rem;
+}
+// -----------------------------MEDIA QUERIES-----------------------------
+@media screen and (min-width: 360px) {
+    .footer__container {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .footer__content {
+        text-align: left;
+        &:nth-of-type(3) .footer__item {
+            justify-content: start;
+        }
+    }
+    .footer__input {
+        margin: 0;
+    }
+    .footer__form {
+        align-items: flex-start;
+    }
+    .footer__socials {
+        justify-content: left;
+    }
+}
+@media screen and (min-width: 600px) {
+    .trainers__container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1.2rem;
+    }
+    .testimonialsSwiper {
+        max-width: 700px;
+    }
+}
+@media screen and (min-width: 768px) {
+    // --------------------------------NAV--------------------------------
+    .nav__menu-icon-container {
+        display: none;
+    }
+    .nav__menu {
+        position: initial;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+    }
+    .nav__list {
+        padding: 0;
+        display: flex;
+        column-gap: 2rem;
+    }
+    .section {
+        padding: 5.5rem 0;
+    }
+    body {
+        font-size: .82rem;
+    }
+    .home__sub-title {
+        font-size: .82rem;
+    }
+    .home__title {
+        font-size: 3.5rem;
+    }
+    .home__content {
+        max-width: 650px;
+    }
+    .homeSwiper .swiper-pagination-bullet {
+        width: 15px;
+        height: 15px;
+    }
+    .btn {
+        font-size: .95rem;
+        font-weight: 700;
+        padding: .65rem 1.55rem;
+    }
+    // -------------------------------ABOUT-------------------------------
+    .about__container {
+        flex-direction: row;
+        align-items: center;
+        column-gap: 4rem;
+    }
+    .about__content {
+        flex-basis: 55%;
+    }
+    .about__top {
+        flex-basis: 45%;
+    }
+    .about__img-container {
+        max-width: 100%;
+        margin: 0;
+    }
+    // ---------------------------GYM FEATURES---------------------------
+    .gym__features-content {
+        display: flex;
+    }
+    .gym__features-img-container,
+    .gym__features-data {
+        flex-basis: 50%;
+    }
+    .gym__features-data {
+        padding-top: 1rem;
+        padding-bottom: .5rem;
+    }
+    .gym__features-icon {
+        width: 2.3rem;
+    }
+    .gym__features-title {
+        margin-bottom: 0;
+    }
+    .gym__features-btn {
+        padding: .5rem 1.3rem;
+        font-size: .75rem;
+    }
+    .gym__features-card:nth-of-type(2) .gym__features-img-container {
+        order: 2
+    }
+    // ------------------------------PRICING------------------------------
+    .pricing__container {
+        gap: 1.2rem;
+        justify-items: center;
+    }
+    .pricing__card-container {
+        margin-inline: 0;
+    }
+    .pricing__card-container:nth-of-type(1) {
+        max-width: 100%;
+        grid-area: 1 / 1 / span 1 / span 2;
+    }
+    .pricing__card-container:nth-of-type(2) {
+        grid-area: 2 / 1 / span 1 / span 1;
+    }
+    .pricing__card-container:nth-of-type(3) {
+        grid-area: 2 / 2 / span 1 / span 1;
+    }
+    .pricing__card-container:nth-of-type(2) .pricing__card,
+    .pricing__card-container:nth-of-type(3) .pricing__card {
+        padding: 2.5rem 1rem;
+    }
+    .pricing__bill span {
+        font-size: 2.4rem;
+    }
+    .pricing__list {
+        row-gap: 2rem;
+    }
+    .pricing__btn {
+        margin-top: 2rem;
+    }
+    // ---------------------------TESTIMONIALS---------------------------
+    .testimonials__container {
+        flex-direction: row;
+        align-items: center;
+        column-gap: 1.2rem;
+    }
+    .testimonials__card {
+        flex-basis: 55%;
+    }
+    .testimonialsSwiper {
+        flex-basis: 45%;
+    }
+    .testimonialsSwiper .swiper-pagination-bullet,
+    .blogsSwiper .swiper-pagination-bullet {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        margin: 0 5px !important;
+    }
+    // ------------------------------FOOTER------------------------------
+    .footer {
+        padding-bottom: 3rem;
+    }
+    .footer__container {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media screen and (min-width: 1024px) {
+    .nav__list {
+        column-gap: 3rem;
+    }
+    .about__content {
+        row-gap: 0;
+        & > * {
+            margin-bottom: 1.8rem;
+        }
+        .section__title-container {
+            margin-bottom: 1.2rem;
+        }
+    }
+    .about__benefits {
+        gap: 1.8rem;
+    }
+    .about__btn {
+        margin-bottom: 0;
+    }
+    .section__title-1 {
+        font-size: 1.55rem;
+    }
+    .stsc1 {
+        padding: .4rem .8rem;
+    }
+    // ---------------------------GYM FEATURES---------------------------
+    .gym__features-img-container,
+    .gym__features-data {
+        flex-basis: auto;
+        height: 254px;
+    }
+    .gym__features-icon {
+        width: 5rem;
+    }
+    .gym__features-btn {
+        padding: .6rem 1.4rem;
+    }
+    // ------------------------------PRICING------------------------------
+    .pricing__container {
+        display: flex;
+        align-items: center;
+    }
+    // -----------------------------TRAINERS-----------------------------
+    .trainers__container {
+        grid-template-columns: repeat(4,1fr);
+    }
+    .trainers__content {
+        max-height: 100%;
+        max-width: 100%;
+        margin-inline: 0;
+    }
+    .trainer__name {
+        margin-bottom: 10px;
+    }
+    .trainers__data {
+        transform: translateY(3.3rem);
+        padding-top: 1.5rem;
+    }
+    // ---------------------------TESTIMONIALS---------------------------
+    .testimonials__card {
+        flex-basis: 45%;
+    }
+    .testimonialsSwiper {
+        flex-basis: 55%;
+    }
+    .testimonials-quote {
+        font-size: 4rem;
+    }
+    // ------------------------------FOOTER------------------------------
+    .footer__container {
+        grid-template-columns: .22fr .24fr .24fr .3fr;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .pricing__container {
+        gap: 2rem;
+    }
 }
